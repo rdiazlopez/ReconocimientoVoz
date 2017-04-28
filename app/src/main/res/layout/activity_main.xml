@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width = "fill_parent"
+    android:layout_height = "fill_parent"
+    android:orientation =  "vertical">
+    <TextView
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:text = "Reconocimiento de voz"/>
+
+    <Button
+        android:id = "@+id/btnvoz"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:text = "Hablar al micro..." />
+
+    <TextView
+        android:id = "@+id/txtresultado"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:text = "txtresultado" />
+
+    <Button
+        android:id="@+id/btntexto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Escuchar el texto..." />
+</LinearLayout>
