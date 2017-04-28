@@ -3,6 +3,7 @@ package com.cice.rdl.reconocimientovoz;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
@@ -63,7 +64,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String toSpeak = txtresultado.getText().toString();
                 Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
-                t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    // API 21 y siguientes
+                    String utteranceId=this.hashCode() + "";
+                    t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null,utteranceId);
+                } else {
+                    // API anterior a 21
+                    t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                }
             }
         });
 
